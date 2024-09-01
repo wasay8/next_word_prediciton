@@ -23,7 +23,7 @@ The application allows users to input a sequence of words and select either an L
 You can install the required libraries using:
 
 ```bash
-pip install streamlit numpy tensorflow
+pip install -r requirement.txt
 ```
 
 ## **Files**
@@ -55,10 +55,4 @@ pip install streamlit numpy tensorflow
 - Ensure that the model files and tokenizer pickle file are located in the same directory as `app.py`.
 - The models should be trained and saved using similar architecture and tokenization settings.
 
-## **Contact**
 
-For any questions or issues, please contact [Your Name] at [Your Email].
-
----
-
-This readme provides a comprehensive overview of the project, including setup instructions, code explanations, and usage guidelines.
