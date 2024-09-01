@@ -10,15 +10,13 @@ The application allows users to input a sequence of words and select either an L
 
 - **LSTM and GRU Models**: Two different models for next-word prediction.
 - **Tokenizer**: A tokenizer for converting text to sequences of integers.
-- **Streamlit Interface**: A web-based interface for user interaction.
 
 ## **Requirements**
 
 - Python 3.x
-- Streamlit
 - NumPy
 - TensorFlow
-- Pickle
+
 
 You can install the required libraries using:
 
@@ -26,33 +24,48 @@ You can install the required libraries using:
 pip install -r requirement.txt
 ```
 
+## Code Overview
+
+### Building and Training the Models
+
+The `building_model.ipynb` notebook contains the code for:
+
+1. **Data Collection**:
+   - Loads Shakespeare's Hamlet text from the NLTK corpus and saves it to `hamlet.txt`.
+
+2. **Text Processing**:
+   - Tokenizes the text and creates input sequences for training.
+   - Pads sequences to ensure uniform input size.
+
+3. **Model Training**:
+   - Defines and trains an LSTM model and a GRU model using TensorFlow/Keras.
+   - Saves the trained models to `next_word_lstm.h5` and `next_word_gru.h5`, respectively.
+
+4. **Model Prediction**:
+   - Defines a function to predict the next word based on the trained model and input text.
+
+5. **Saving the Models**:
+   - Saves the tokenizer and models to files for future use.
+
+
 ## **Files**
 
 1. **`next_word_lstm.h5`**: Pre-trained LSTM model for next-word prediction.
 2. **`next_word_gru.h5`**: Pre-trained GRU model for next-word prediction.
 3. **`tokenizer.pickle`**: Pickle file containing the tokenizer used for text preprocessing.
-4. **`app.py`**: Main Streamlit application file.
 
-## **Usage**
 
-1. **Run the Streamlit Application**:
+## Running the Code
 
-   Navigate to the directory containing `app.py` and run:
-
-   ```bash
-   streamlit run app.py
-   ```
-
-2. **Interact with the App**:
-
-   - **Input Text**: Enter a sequence of words in the text input field.
-   - **Select Model**: Choose between 'LSTM' and 'GRU' using the dropdown menu.
-   - **Predict Next Word**: Click the 'Predict Next Word' button to get the predicted next word.
+1. Install the required packages.
+2. Ensure that `next_word_lstm.h5`, `next_word_gru.h5`, and `tokenizer.pickle` are in the same directory as your script.
+3. Run the provided example code or integrate it into your own application.
 
 
 ## **Notes**
 
 - Ensure that the model files and tokenizer pickle file are located in the same directory as `app.py`.
 - The models should be trained and saved using similar architecture and tokenization settings.
+
 
 
